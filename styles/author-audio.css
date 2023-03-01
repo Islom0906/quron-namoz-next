@@ -1,0 +1,24 @@
+/* .author-audio{} */
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scroll-behavior: smooth;
+    scrollbar-width: auto;
+    scrollbar-color: #199F87;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #199F87;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+}
