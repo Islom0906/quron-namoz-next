@@ -87,3 +87,19 @@ export interface AyahsTextRes extends Response{
         data:AyahsTextData
 }
 
+export interface TimesI{
+        tong_saharlik: string
+        quyosh: string
+        peshin: string
+        asr: string
+        shom_iftor: string
+        huftonstring:string
+}
+
+export interface TimesRes{
+        region: string
+        date: string
+        weekday: string
+        times: TimesI
+}
+

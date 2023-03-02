@@ -18,7 +18,7 @@ const AudioPlayerHome = () => {
         length: 0,
         progress: 0
     });
-    const [isAudio, setIsAudio] = useState<boolean>(true)
+    const [isAudio, setIsAudio] = useState<boolean>(false)
 
     const {isPlaying, surahDetail, audioId, audio} = useAppSelector(state => state.surahDetail)
     const dispatch = useAppDispatch()

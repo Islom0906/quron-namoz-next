@@ -7,7 +7,7 @@ import Sidebar from "@/components/sidebar";
 import {Provider} from 'react-redux';
 import store from "@/store";
 import AudioPlayerHome from "@/components/audio-player-home";
-import {useState} from "react";
+import NextNProgress from 'nextjs-progressbar';
 
 
 export default function App({Component, pageProps}: AppProps) {
@@ -25,6 +25,7 @@ export default function App({Component, pageProps}: AppProps) {
 
 
                 <div className={'pt-[104px] sm:pl-[104px] pl-10 sm:pb-10 pb-20 pr-10'}>
+                    <NextNProgress />
                     <Component {...pageProps} />
 
                 </div>

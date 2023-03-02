@@ -1,0 +1,39 @@
+[
+  {
+    "time":"",
+    "isActive":false,
+    "timeName":"tong_saharlik",
+    "timeNameUz":"Bomdod"
+  },
+  {
+    "time":"",
+    "isActive":false,
+    "timeName":"quyosh",
+    "timeNameUz":"Quyosh"
+  },
+  {
+    "time":"",
+    "isActive":false,
+    "timeName":"peshin",
+    "timeNameUz":"Peshin"
+  },
+  {
+    "time":"",
+    "isActive":false,
+    "timeName":"asr",
+    "timeNameUz":"Asr"
+  },
+  {
+    "time":"",
+    "isActive":false,
+    "timeName":"shom_iftor",
+    "timeNameUz":"Shom"
+  },
+  {
+    "time":"",
+    "isActive":false,
+    "timeName":"hufton",
+    "timeNameUz":"Xufton"
+  }
+]
+
