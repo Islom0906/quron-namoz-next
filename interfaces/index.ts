@@ -93,7 +93,7 @@ export interface TimesI{
         peshin: string
         asr: string
         shom_iftor: string
-        huftonstring:string
+        hufton:string
 }
 
 export interface TimesRes{

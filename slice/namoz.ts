@@ -9,7 +9,14 @@ interface NamozInitialI{
 
 const initialState={
     isLoading:false,
-    times:{},
+    times:{
+        tong_saharlik: "",
+        quyosh: "",
+        peshin: "",
+        asr: "",
+        shom_iftor: "",
+        hufton:"",
+    },
     error:''
 }
 

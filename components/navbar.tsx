@@ -10,14 +10,7 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className="flex items-center justify-between w-full">
-                <form className="flex items-center py-5  pr-7">
-                    <i className="ri-search-line ri-lg text-primary cursor-pointer"></i>
-                    <input
-                        type="text"
-                        placeholder="Search here for"
-                        className="outline-none border-0 ml-5 text-primary w-full"
-                    />
-                </form>
+                <div></div>
                 <Languages/>
             </div>
         </div>

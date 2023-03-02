@@ -19,11 +19,12 @@ interface timeI {
     timeName: string,
     timeNameUz: string
 }
-interface timeNamozI{
-        isActive: boolean
-        time: string
-        timeName: string
-        timeNameUz:string
+
+interface timeNamozI {
+    isActive: boolean
+    time: string
+    timeName: string
+    timeNameUz: string
 }
 
 const Namoz = () => {
@@ -40,6 +41,7 @@ const Namoz = () => {
         try {
             const data = await NamozService.getNamoz<TimesRes>()
             const times: TimesI = data.times
+            console.log(times)
             dispatch(getNamozSuccess(times))
 
         } catch (error) {
@@ -51,25 +53,47 @@ const Namoz = () => {
     useMemo(() => {
         const newTimeArr: timeI[] = []
         timeIcon.forEach(time => {
-            const timeName = time.timeName
+            const timeName: string = time.timeName
 
-            const timeHour:string = times[`${timeName}`]
-            if (timeHour !== undefined) {
-                time.time = timeHour
+            if (timeName === 'tong_saharlik') {
+                time.time = times.tong_saharlik
+
+            } else if (timeName === 'quyosh') {
+                time.time = times.quyosh
+
+            } else if (timeName === 'peshin') {
+                time.time = times.peshin
+
+            } else if (timeName === 'asr') {
+                time.time = times.asr
+
+            } else if (timeName === 'shom_iftor') {
+                time.time = times.shom_iftor
+
+            } else if (timeName === 'hufton') {
+                time.time = times.hufton
+
             }
+
+
+            // console.log(times[timeName])
+
+
+            // if (timeHour !== undefined) {
+            //     time.time = timeHour
+            // }
             newTimeArr.push(time)
         })
-        let collectionMinut:number[] = []
+        let collectionMinut: number[] = []
         for (let i = 0; i < newTimeArr.length; i++) {
-            const prayerSplitHour:string[] = newTimeArr[i].time.split(':')
-            const prayerMinutCalculation:number = Number(prayerSplitHour[0]) * 60 + Number(prayerSplitHour[1])
+            const prayerSplitHour: string[] = newTimeArr[i].time.split(':')
+            const prayerMinutCalculation: number = Number(prayerSplitHour[0]) * 60 + Number(prayerSplitHour[1])
             collectionMinut.push(prayerMinutCalculation)
         }
 
 
-
         const hour = moment().format('LT')
-        const splitHour:string[] = hour.split(':')
+        const splitHour: string[] = hour.split(':')
         const minutCalculation = Number(splitHour[0]) * 60 + Number(splitHour[1])
 
         for (let i = 0; i < newTimeArr.length; i++) {
@@ -94,7 +118,7 @@ const Namoz = () => {
 
 
     useEffect(() => {
-        getNamoz().then(()=>{
+        getNamoz().then(() => {
             console.log('success')
         })
         setInterval(() => {
@@ -112,7 +136,7 @@ const Namoz = () => {
         <div className="w-full h-full space-y-10">
             <div className='flex flex-col items-center space-y-10'>
                 {
-                    isLoading ? (<Skeleton width={200} height={40} />) :
+                    isLoading ? (<Skeleton width={200} height={40}/>) :
                         (<h1 className="text-primary  text-3xl">{prayerName}</h1>)
                 }
                 <span className="text-black font-bold text-5xl">{liveClock}</span>
@@ -121,16 +145,17 @@ const Namoz = () => {
             <div className='grid md:grid-cols-2 gap-5'>
                 {
                     isLoading ?
-                        Array(6).fill(0).map((_,ind)=>(
-                            <div key={ind} className={`bg-white  rounded-lg p-5 shadow-xl flex items-center justify-between`}>
-                                <Skeleton width={50} height={30} />
-                                <Skeleton width={65} height={30} />
+                        Array(6).fill(0).map((_, ind) => (
+                            <div key={ind}
+                                 className={`bg-white  rounded-lg p-5 shadow-xl flex items-center justify-between`}>
+                                <Skeleton width={50} height={30}/>
+                                <Skeleton width={65} height={30}/>
                             </div>
 
                         ))
                         :
                         timeNamoz.map((item, index) => (
-                            <NamozTimeCard key={index} item={item} />
+                            <NamozTimeCard key={index} item={item}/>
                         ))
                 }
             </div>
