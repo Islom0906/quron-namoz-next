@@ -21,7 +21,7 @@ const Index = ({surahs}: SurahsProps) => {
         <>
             <Head>
                 <title>Surahs</title>
-                <meta name="description" content='Listen to the surahs of the Qur'an'/>
+                <meta name="description" content='Listen to the surahs of the Quran'/>
             </Head>
 
         <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-3 ">
