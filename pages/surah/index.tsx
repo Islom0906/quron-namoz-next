@@ -6,6 +6,7 @@ import {getSurahFailure, getSurahStart, getSurahSuccess} from "@/slice/surah";
 import {useAppDispatch, useAppSelector} from "@/store/hook";
 import {useDispatch} from "react-redux";
 import {AppDispatch} from "@/store";
+import Head from "next/head";
 
 interface SurahsProps {
     surahs: SurahI[]
@@ -17,6 +18,12 @@ const Index = ({surahs}: SurahsProps) => {
     const dispatch=useAppDispatch()
 
     return (
+        <>
+            <Head>
+                <title>Surahs</title>
+                <meta name="description" content='Listen to the surahs of the Qur'an'/>
+            </Head>
+
         <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-3 ">
             {
                 surahs.map(surah => (
@@ -28,6 +35,7 @@ const Index = ({surahs}: SurahsProps) => {
                 ))
             }
         </div>
+        </>
     )
 }
 
